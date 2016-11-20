@@ -6,6 +6,7 @@ var roleBuilder = require('role.builder');
 
 module.exports.loop = function () {
     
+    //remove unused creep memory
     for(var i in Memory.creeps) {
         if(!Game.creeps[i]) {
             delete Memory.creeps[i];
@@ -22,25 +23,34 @@ module.exports.loop = function () {
     //console.log('Harvesters: ' + harvesters.length);
 
     //auto-spawn
-    if(upgrader1.length < 4) {
+    if(upgrader1.length < 5) {
         var newName = Game.spawns['Spawn1'].createCreep([WORK,WORK,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE], undefined, {role: 'upgrader1'});
-        console.log('Spawning new upgrader1: ' + newName);
+        if (!(newName < 0)) console.log('Spawning new upgrader1: ' + newName);
     }
     if(upgrader2.length < 4) {
         var newName = Game.spawns['Spawn1'].createCreep([WORK,WORK,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE], undefined, {role: 'upgrader2'});
-        console.log('Spawning new upgrader2: ' + newName);
+        if (!(newName < 0)){
+            console.log('Spawning new upgrader2: ' + newName);        
+        }
     }
     if(harvester1.length < 2) {
         var newName = Game.spawns['Spawn1'].createCreep([WORK,WORK,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE], undefined, {role: 'harvester1'});
-        console.log('Spawning new harvester1: ' + newName);
+        if (!(newName < 0)){
+            console.log('Spawning new harvester1: ' + newName);        
+        }
     }
     if(harvester2.length < 1) {
         var newName = Game.spawns['Spawn1'].createCreep([WORK,WORK,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE], undefined, {role: 'harvester2'});
-        console.log('Spawning new harvester2: ' + newName);
+        if (!(newName < 0)){
+            console.log('Spawning new harvester2: ' + newName);        
+        }
     }
     if(builder.length < 3) {
         var newName = Game.spawns['Spawn1'].createCreep([WORK,WORK,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE], undefined, {role: 'builder'});
-        console.log('Spawning new builder: ' + newName);
+        if (!(newName < 0)){
+            console.log('Spawning new builder: ' + newName);        
+        }
+        
     }
 
     //run creep roles
