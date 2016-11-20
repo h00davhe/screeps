@@ -1,6 +1,6 @@
-var roleBuilder = {
+//var roleBuilder = {
+module.exports = {
 
-    /** @param {Creep} creep **/
     run: function(creep) {
 
 	    if(creep.memory.building && creep.carry.energy == 0) {
@@ -29,4 +29,4 @@ var roleBuilder = {
 	}
 };
 
-module.exports = roleBuilder;
+//module.exports = roleBuilder;
