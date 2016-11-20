@@ -35,16 +35,7 @@ var roleHarvester2 = {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+ 
     
     
     
