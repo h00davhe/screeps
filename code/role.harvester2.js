@@ -40,15 +40,23 @@ var roleHarvester2 = {
         
         if (creep.carry.energy == 0) creep.memory.upgrading = false;
         
-	    if(creep.carry.energy < creep.carryCapacity && creep.memory.upgrading == false) {
+        var targets = creep.room.find(FIND_STRUCTURES, {
+                    filter: (structure) => {
+                        return (structure.structureType == STRUCTURE_EXTENSION ||
+                                structure.structureType == STRUCTURE_SPAWN ||
+                                structure.structureType == STRUCTURE_TOWER) && structure.energy < structure.energyCapacity;
+                    }
+        });
+        
+        if(creep.carry.energy < creep.carryCapacity && creep.memory.upgrading == false) {
             var sources = creep.room.find(FIND_SOURCES);
             if(creep.harvest(sources[1]) == ERR_NOT_IN_RANGE) {
                 creep.moveTo(sources[1].pos);
             }
         }
-        else if(Game.spawns['Spawn1'].energy < Game.spawns['Spawn1'].energyCapacity) {
-            if(creep.transfer(Game.spawns['Spawn1'], RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
-                creep.moveTo(Game.spawns['Spawn1']);
+        else if(targets.length > 0) {
+            if(creep.transfer(targets[0], RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
+                    creep.moveTo(targets[0]);
             }
         }
         else {
@@ -60,15 +68,7 @@ var roleHarvester2 = {
                     creep.memory.upgrading = true;
                 }
             }
-        }
-        /*
-        if (creep.memory.upgrading = true) {
-            creep.upgradeController(creep.room.controller);
-            if (creep.carry.energy == 0) creep.memory.upgrading = false;
-            
-        }
-        */
-        
+        }        
 	}
 };
 
