@@ -6,6 +6,7 @@ var roleHarvester1 = {
         if (creep.carry.energy == creep.carryCapacity) creep.memory.harvesting = false;
 
         //find targets to transfer energy to
+        //change this so it finds the closest energy storage first
         var targets = creep.room.find(FIND_STRUCTURES, {
                     filter: (structure) => {
                         return (structure.structureType == STRUCTURE_SPAWN ||
