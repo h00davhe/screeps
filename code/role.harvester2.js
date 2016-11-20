@@ -1,8 +1,7 @@
 var roleHarvester2 = {
     
 //temp make builder
-
-    /** @param {Creep} creep **/
+/*
     run: function(creep) {
 
 	    if(creep.memory.building && creep.carry.energy == 0) {
@@ -31,16 +30,11 @@ var roleHarvester2 = {
 	}
 };
 
-    
+*/
     
     
     
  
-    
-    
-    
-    
-/*
 
     run: function(creep) {
         
@@ -74,8 +68,8 @@ var roleHarvester2 = {
             
         }
         */
-/*        
+        
 	}
 };
-*/
+
 module.exports = roleHarvester2;
