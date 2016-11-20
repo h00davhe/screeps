@@ -1,6 +1,6 @@
 module.exports = {
 
-/*
+
     run: function(creep) {
         
         if (creep.carry.energy == 0) creep.memory.upgrading = false;
@@ -25,9 +25,9 @@ module.exports = {
         }        
 	}
 };
-*/
 
 
+/*
 //temp make builder
 
     run: function(creep) {
@@ -57,7 +57,7 @@ module.exports = {
         }
     }
 };
-
+*/
 
 
 
