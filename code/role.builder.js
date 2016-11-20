@@ -23,9 +23,9 @@ module.exports = {
             }
 
             else {
-	            //find something to repair
+	            //find something to repair, that is not a wall
 	            var damagedStructure = creep.room.find(FIND_STRUCTURES, {
-				    filter: object => object.hits < object.hitsMax
+				    filter: object => object.hits < object.hitsMax && object.stuctureType != STRUCTURE_WALL
 				});
 
 				damagedStructure.sort((a,b) => a.hits - b.hits);
@@ -36,8 +36,10 @@ module.exports = {
 				    }
 				}
 			}
+
+			//add code: if nothing else, upgrade
 	    }
-	    
+
 	    else {
 	        var source = creep.pos.findClosestByPath(FIND_SOURCES_ACTIVE);
             if(creep.harvest(source) == ERR_NOT_IN_RANGE) {
