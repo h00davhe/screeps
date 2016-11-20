@@ -1,3 +1,4 @@
+//todo: pass variable to select which source to harvest from. store in memory
 var roleHarvester1 = {
 
     run: function(creep) {
@@ -9,9 +10,9 @@ var roleHarvester1 = {
         //change this so it finds the closest energy storage first
         var targets = creep.room.find(FIND_STRUCTURES, {
                     filter: (structure) => {
-                        return (structure.structureType == STRUCTURE_SPAWN ||
-                                structure.structureType == STRUCTURE_EXTENSION ||
-                                structure.structureType == STRUCTURE_TOWER) && structure.energy < structure.energyCapacity;
+                        return (structure.structureType == STRUCTURE_TOWER  ||
+                                structure.structureType == STRUCTURE_SPAWN  ||
+                                structure.structureType == STRUCTURE_EXTENSION) && structure.energy < structure.energyCapacity;
                     }
         });
         
