@@ -1,14 +1,13 @@
 var roleHarvester1 = {
 
-    /** @param {Creep} creep **/
     run: function(creep) {
         
         if (creep.carry.energy == 0) creep.memory.upgrading = false;
         
         var targets = creep.room.find(FIND_STRUCTURES, {
                     filter: (structure) => {
-                        return (structure.structureType == STRUCTURE_EXTENSION ||
-                                structure.structureType == STRUCTURE_SPAWN ||
+                        return (structure.structureType == STRUCTURE_SPAWN ||
+                                structure.structureType == STRUCTURE_EXTENSION ||
                                 structure.structureType == STRUCTURE_TOWER) && structure.energy < structure.energyCapacity;
                     }
         });
