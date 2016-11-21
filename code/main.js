@@ -74,6 +74,7 @@ module.exports.loop = function () {
         Game.notify(`User ${username} spotted in room ${roomName}`);
         var towers = Game.spawns['Spawn1'].room.find(
             FIND_MY_STRUCTURES, {filter: {structureType: STRUCTURE_TOWER}});
+        console.log(towers);
         towers.forEach(tower => tower.attack(hostiles[0]));
     }
 
