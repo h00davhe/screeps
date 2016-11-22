@@ -23,12 +23,17 @@ module.exports = {
             }
 
             else if(creep.memory.repairMostDamagedFirst == true) {
-	            //find something to repair, that is not a wall
+	            //find something to repair
 	            var damagedStructure = creep.room.find(FIND_STRUCTURES, {
-				    filter: object => object.hits < object.hitsMax && object.stuctureType != STRUCTURE_WALL
+				    filter: (object) => {
+				        if (object.structureType === STRUCTURE_WALL) return false;
+				        if (object.hits < object.hitsMax) return true;
+				    }
 				});
 
+	            //console.log(damagedStructure);
 				damagedStructure.sort((a,b) => a.hits - b.hits);
+				//console.log(damagedStructure[0].structureType);
 
 				if(damagedStructure.length > 0) {
 				    if(creep.repair(damagedStructure[0]) == ERR_NOT_IN_RANGE) {
@@ -38,8 +43,11 @@ module.exports = {
 			}
 			else {
 				//find closest non-wall to repair
-				var damagedStructure = creep.pos.findClosestByPath(FIND_STRUCTURES, {
-				    filter: object => object.hits < object.hitsMax && object.stuctureType != STRUCTURE_WALL
+				var damagedStructure = creep.room.find(FIND_STRUCTURES, {
+				    filter: (object) => {
+				        if (object.structureType === STRUCTURE_WALL) return false;
+				        if (object.hits < object.hitsMax) return true;
+				    }
 				});
 				//console.log(damagedStructure);
 
