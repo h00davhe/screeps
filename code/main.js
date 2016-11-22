@@ -26,19 +26,19 @@ module.exports.loop = function () {
     //console.log('Harvesters: ' + harvesters.length);
 
     //auto-spawn
-    if(harvester1.length < 3) {
+    if(harvester1.length < 2) {
         var newName = Game.spawns['Spawn1'].createCreep([WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE], undefined, {role: 'harvester1'});
         if (!(newName < 0)) console.log('Spawning new harvester1: ' + newName);
     }
-    if(harvester2.length < 3) {
+    if(harvester2.length < 2) {
         var newName = Game.spawns['Spawn1'].createCreep([WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE], undefined, {role: 'harvester2'});
         if (!(newName < 0)) console.log('Spawning new harvester2: ' + newName);
     } 
-    if(upgrader1.length < 4) {
+    if(upgrader1.length < 3) {
         var newName = Game.spawns['Spawn1'].createCreep([WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE], undefined, {role: 'upgrader1'});
         if (!(newName < 0)) console.log('Spawning new upgrader1: ' + newName);
     }
-    if(upgrader2.length < 4) {
+    if(upgrader2.length < 3) {
         var newName = Game.spawns['Spawn1'].createCreep([WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE], undefined, {role: 'upgrader2'});
         if (!(newName < 0)) console.log('Spawning new upgrader2: ' + newName);
     }
