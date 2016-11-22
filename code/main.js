@@ -1,5 +1,9 @@
 //todo: spawn builders only when there are unfinished buildings - then despawn them
-//make new repair creep, spawn on demand - then despawn
+
+//make new repair creep, spawn on demand - then despawn, make list of stuff that needs repair - sort lowest hp - finish repairing before getting new target
+//update list every 50? ticks when no repairer is active, more often when active or when creep calls for new repair target
+
+//build emergency harvesters if no active harvesters
 
 var roleHarvester1 = require('role.harvester1');
 var roleHarvester2 = require('role.harvester2');
@@ -34,7 +38,7 @@ module.exports.loop = function () {
         var newName = Game.spawns['Spawn1'].createCreep([WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE], undefined, {role: 'harvester2'});
         if (!(newName < 0)) console.log('Spawning new harvester2: ' + newName);
     } 
-    if(upgrader1.length < 3) {
+    if(upgrader1.length < 4) {
         var newName = Game.spawns['Spawn1'].createCreep([WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE], undefined, {role: 'upgrader1'});
         if (!(newName < 0)) console.log('Spawning new upgrader1: ' + newName);
     }
@@ -70,7 +74,7 @@ module.exports.loop = function () {
     //run towers
     
     var tower = Game.getObjectById('5831e51e80d1b074327a9522');
-    console.log(tower);
+    //console.log(tower);
 
     if(tower) {
         var closestHostile = tower.pos.findClosestByRange(FIND_HOSTILE_CREEPS);
