@@ -5,6 +5,14 @@
 
 //build emergency harvesters if no active harvesters
 
+//make harvesters deliver energy to closest storage
+//pass variable to select which source to harvest from, store in memory - make single harvest class
+
+//priority energy delivery to towers, when below a certain energy limit - fix tower attack and make them resist drain attacks, attack at full range till energy limit
+
+//explore miner/transport setup
+
+
 var roleHarvester1 = require('role.harvester1');
 var roleHarvester2 = require('role.harvester2');
 var roleUpgrader1 = require('role.upgrader1');

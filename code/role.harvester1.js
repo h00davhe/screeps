@@ -1,4 +1,3 @@
-//todo: pass variable to select which source to harvest from. store in memory
 var roleHarvester1 = {
 
     run: function(creep) {
