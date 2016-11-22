@@ -31,7 +31,7 @@ module.exports.loop = function () {
         var newName = Game.spawns['Spawn1'].createCreep([WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE], undefined, {role: 'harvester2'});
         if (!(newName < 0)) console.log('Spawning new harvester2: ' + newName);
     }
-    if(upgrader1.length < 5) {
+    if(upgrader1.length < 4) {
         var newName = Game.spawns['Spawn1'].createCreep([WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE], undefined, {role: 'upgrader1'});
         if (!(newName < 0)) console.log('Spawning new upgrader1: ' + newName);
     }
