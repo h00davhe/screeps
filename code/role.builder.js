@@ -43,8 +43,8 @@ module.exports = {
 			}
 			else {
 				//find closest non-wall to repair
-				var damagedStructure = creep.room.find(FIND_STRUCTURES, {
-				    filter: (object) => {
+				var damagedStructure = creep.pos.findClosestByPath(FIND_STRUCTURES, {
+					filter: (object) => {
 				        if (object.structureType === STRUCTURE_WALL) return false;
 				        if (object.hits < object.hitsMax) return true;
 				    }
