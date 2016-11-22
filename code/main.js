@@ -13,6 +13,8 @@
 //explore miner/transport setup
 
 
+//saving these room.energyAvailable & room.energyCapacityAvailable
+
 var roleHarvester1 = require('role.harvester1');
 var roleHarvester2 = require('role.harvester2');
 var roleUpgrader1 = require('role.upgrader1');
