@@ -1,3 +1,6 @@
+//todo: spawn builders only when there are unfinished buildings - then despawn them
+//make new repair creep, spawn on demand - then despawn
+
 var roleHarvester1 = require('role.harvester1');
 var roleHarvester2 = require('role.harvester2');
 var roleUpgrader1 = require('role.upgrader1');
@@ -23,7 +26,7 @@ module.exports.loop = function () {
     //console.log('Harvesters: ' + harvesters.length);
 
     //auto-spawn
-    if(harvester1.length < 2) {
+ /*   if(harvester1.length < 2) {
         var newName = Game.spawns['Spawn1'].createCreep([WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE], undefined, {role: 'harvester1'});
         if (!(newName < 0)) console.log('Spawning new harvester1: ' + newName);
     }
@@ -31,6 +34,15 @@ module.exports.loop = function () {
         var newName = Game.spawns['Spawn1'].createCreep([WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE], undefined, {role: 'harvester2'});
         if (!(newName < 0)) console.log('Spawning new harvester2: ' + newName);
     }
+ */
+     if(harvester1.length < 2) {
+        var newName = Game.spawns['Spawn1'].createCreep([WORK,CARRY,CARRY,MOVE,MOVE], undefined, {role: 'harvester1'});
+        if (!(newName < 0)) console.log('Spawning new harvester1: ' + newName);
+    }
+    if(harvester2.length < 2) {
+        var newName = Game.spawns['Spawn1'].createCreep([WORK,CARRY,CARRY,MOVE,MOVE], undefined, {role: 'harvester2'});
+        if (!(newName < 0)) console.log('Spawning new harvester2: ' + newName);
+    } 
     if(upgrader1.length < 4) {
         var newName = Game.spawns['Spawn1'].createCreep([WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE], undefined, {role: 'upgrader1'});
         if (!(newName < 0)) console.log('Spawning new upgrader1: ' + newName);
