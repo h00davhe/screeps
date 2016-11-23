@@ -3,14 +3,13 @@
 //make new repair creep, spawn on demand - then despawn, make list of stuff that needs repair - sort lowest hp - finish repairing before getting new target
 //update list every 50? ticks when no repairer is active, more often when active or when creep calls for new repair target
 
-//build emergency harvesters if no active harvesters
-
 //make harvesters deliver energy to closest storage
 //pass variable to select which source to harvest from, store in memory - make single harvest class
 
 //priority energy delivery to towers, when below a certain energy limit - fix tower attack and make them resist drain attacks, attack at full range till energy limit
 
 //explore miner/transport setup
+//use turret for maintenance?
 
 
 //saving these room.energyAvailable & room.energyCapacityAvailable
@@ -75,8 +74,8 @@ module.exports.loop = function () {
         var newName = Game.spawns['Spawn1'].createCreep([WORK,WORK,CARRY,MOVE], undefined, {role: 'emergencyHarvester'});
         if (!(newName < 0)) console.log('Spawning new emergencyharvester: ' + newName);
     }
-    if(attacker.length < 1 && attack && harvester1.length > 1 && harvester2.length > 1) {
-        var newName = Game.spawns['Spawn1'].createCreep([MOVE], undefined, {role: 'attacker'});
+    if(attacker.length < 2 && attack && harvester1.length > 1 && harvester2.length > 1) {
+        var newName = Game.spawns['Spawn1'].createCreep([TOUGH,TOUGH,ATTACK,ATTACK,ATTACK,ATTACK,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,ATTACK,ATTACK,ATTACK,ATTACK,MOVE], undefined, {role: 'attacker'});
         if (!(newName < 0)) console.log('Spawning new attacker: ' + newName);
     }
 
