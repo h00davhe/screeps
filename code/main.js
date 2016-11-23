@@ -76,7 +76,7 @@ module.exports.loop = function () {
         if (!(newName < 0)) console.log('Spawning new emergencyharvester: ' + newName);
     }
     if(attacker.length < 1 && attack && harvester1.length > 1 && harvester2.length > 1) {
-        var newName = Game.spawns['Spawn1'].createCreep([MOVE], undefined, {role: 'attacker', attackTarget});
+        var newName = Game.spawns['Spawn1'].createCreep([MOVE], undefined, {role: 'attacker'});
         if (!(newName < 0)) console.log('Spawning new attacker: ' + newName);
     }
 
@@ -102,7 +102,7 @@ module.exports.loop = function () {
             roleBuilder.run(creep);
         }
         else if(creep.memory.role == 'attacker') {
-            roleAttacker.run(creep);
+            roleAttacker.run(creep, attackTarget);
         }
     }
 
