@@ -62,7 +62,7 @@ module.exports.loop = function () {
         if (!(newName < 0)) console.log('Spawning new builder: ' + newName);        
     }
     if(harvester1.length < 1 && harvester2.length < 1 && emergencyHarvester.length < 3) {
-        var newName = Game.spawns['Spawn1'].createCreep([WORK,CARRY,CARRY,MOVE,MOVE], undefined, {role: 'emergencyHarvester'});
+        var newName = Game.spawns['Spawn1'].createCreep([WORK,WORK,CARRY,MOVE], undefined, {role: 'emergencyHarvester'});
         if (!(newName < 0)) console.log('Spawning new emergencyharvester1: ' + newName);
     }
 
