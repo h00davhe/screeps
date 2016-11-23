@@ -63,7 +63,7 @@ module.exports.loop = function () {
     }
     if(harvester1.length < 1 && harvester2.length < 1 && emergencyHarvester.length < 3) {
         var newName = Game.spawns['Spawn1'].createCreep([WORK,WORK,CARRY,MOVE], undefined, {role: 'emergencyHarvester'});
-        if (!(newName < 0)) console.log('Spawning new emergencyharvester1: ' + newName);
+        if (!(newName < 0)) console.log('Spawning new emergencyharvester: ' + newName);
     }
 
     //run creep roles
@@ -76,7 +76,7 @@ module.exports.loop = function () {
             roleHarvester2.run(creep);
         }
         else if(creep.memory.role == 'emergencyHarvester') {
-            roleHarvester2.run(creep);
+            roleHarvester1.run(creep);
         }
         else if(creep.memory.role == 'upgrader1') {
             roleUpgrader1.run(creep);
