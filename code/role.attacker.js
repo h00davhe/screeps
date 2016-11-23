@@ -22,7 +22,7 @@ module.exports = {
             var targets = creep.room.find(FIND_HOSTILE_SPAWNS);
             var target;
             if(targets.length) {
-                if(creep.attack(targets[0]) == ERR_NOT_IN_RANGE) {
+                if(creep.attack(targets[0]) == (ERR_NOT_IN_RANGE || ERR_NO_BODYPART)) {
                     creep.moveTo(targets[0]);
                 }
             }
