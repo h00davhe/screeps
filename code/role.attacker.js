@@ -20,7 +20,7 @@ module.exports = {
 */
             //just rush spawn
             var targets = creep.room.find(FIND_HOSTILE_SPAWNS);
-            console.log(targets);
+            //console.log(targets);
             var target;
             if(targets.length) {
                 if(creep.attack(targets[0]) == ERR_NOT_IN_RANGE) {

@@ -36,7 +36,7 @@ module.exports.loop = function () {
         }
     }
 
-    var attack = true;
+    var attack = false;
     var attackTarget = new RoomPosition(17, 39, 'E68N26');
     
     //find number of creeps by role
