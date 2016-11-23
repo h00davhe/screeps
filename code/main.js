@@ -60,6 +60,10 @@ module.exports.loop = function () {
         var newName = Game.spawns['Spawn1'].createCreep([WORK,WORK,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE], undefined, {role: 'builder', repairMostDamagedFirst: false});
         if (!(newName < 0)) console.log('Spawning new builder: ' + newName);        
     }
+    if(harvester1.length < 1 && harvester2.length < 1) {
+        var newName = Game.spawns['Spawn1'].createCreep([WORK,CARRY,CARRY,MOVE,MOVE], undefined, {role: 'harvester1'});
+        if (!(newName < 0)) console.log('Spawning new emergencyharvester1: ' + newName);
+    }
 
     //run creep roles
     for(var i in Game.creeps) {
