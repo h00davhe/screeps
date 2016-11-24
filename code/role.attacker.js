@@ -41,6 +41,13 @@ module.exports = {
                     }
                 }
             }
+
+            if(target = creep.pos.findClosestByRange(STRUCTURE_WALL)) {
+                //temp remove walls
+                if(creep.attack(target) == ERR_NOT_IN_RANGE) {
+                    creep.moveTo(target);
+                }
+            }
         }
     }
 };
