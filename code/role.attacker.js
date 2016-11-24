@@ -42,6 +42,7 @@ module.exports = {
                 }
             }
 */
+            creep.moveTo(attackTarget);
             if(target = creep.pos.findClosestByRange(STRUCTURE_WALL)) {
                 //temp remove walls
                 if(creep.attack(target) == ERR_NOT_IN_RANGE) {
