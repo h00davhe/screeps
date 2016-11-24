@@ -5,6 +5,8 @@ module.exports = {
             creep.moveTo(attackTarget);
         }
         else{
+            //on new room entry, force new pathfinding
+
             //attack stuff
 /*
             var target = creep.pos.findClosestByRange(FIND_HOSTILE_CREEPS);
@@ -34,6 +36,7 @@ module.exports = {
                 }
             }
             else {
+                //todo exclude controller from targets
                 target = creep.pos.findClosestByRange(FIND_HOSTILE_STRUCTURES);
                 if(target) {
                     if(creep.attack(target) == ERR_NOT_IN_RANGE) {

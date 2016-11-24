@@ -24,6 +24,7 @@ var roleUpgrader1 = require('role.upgrader1');
 var roleUpgrader2 = require('role.upgrader2');
 var roleBuilder = require('role.builder');
 var roleAttacker = require('role.attacker');
+var roleReserver = require('role.reserver');
 
 module.exports.loop = function () {
     
@@ -37,6 +38,7 @@ module.exports.loop = function () {
 
     var attack = false;
     var attackTarget = new RoomPosition(30, 23, 'E68N27');
+    var reserveTarget = new RoomPosition(25, 25, 'E68N26');
     
     //find number of creeps by role
     var harvester1 = _.filter(Game.creeps, (creep) => creep.memory.role == 'harvester1');
@@ -46,6 +48,7 @@ module.exports.loop = function () {
     var builder = _.filter(Game.creeps, (creep) => creep.memory.role == 'builder');
     var emergencyHarvester = _.filter(Game.creeps, (creep) => creep.memory.role == 'emergencyHarvester');
     var attacker = _.filter(Game.creeps, (creep) => creep.memory.role == 'attacker');
+    var reserver = _.filter(Game.creeps, (creep) => creep.memory.role == 'reserver');
 
     //console.log('Harvesters: ' + harvesters.length);
 
@@ -78,6 +81,10 @@ module.exports.loop = function () {
         var newName = Game.spawns['Spawn1'].createCreep([TOUGH,TOUGH,ATTACK,ATTACK,ATTACK,ATTACK,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,ATTACK,ATTACK,ATTACK,ATTACK,MOVE], undefined, {role: 'attacker'});
         if (!(newName < 0)) console.log('Spawning new attacker: ' + newName);
     }
+    if(reserver.length < 1 && harvester1.length > 1 && harvester2.length > 1) {
+        var newName = Game.spawns['Spawn1'].createCreep([CLAIM,CLAIM,MOVE,MOVE], undefined, {role: 'reserver', destinationRoom: reserveTarget});
+        if (!(newName < 0)) console.log('Spawning new reserver: ' + newName);
+    }
 
     //run creep roles
     for(var i in Game.creeps) {
@@ -102,6 +109,9 @@ module.exports.loop = function () {
         }
         else if(creep.memory.role == 'attacker') {
             roleAttacker.run(creep, attackTarget);
+        }
+        else if(creep.memory.role == 'reserver') {
+            roleReserver.run(creep);
         }
     }
 
