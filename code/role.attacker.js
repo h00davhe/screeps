@@ -19,7 +19,7 @@ module.exports = {
             }
 */
             //just rush spawn
-            var targets = creep.room.find(FIND_HOSTILE_SPAWNS);
+/*            var targets = creep.room.find(FIND_HOSTILE_SPAWNS);
             //console.log(targets);
             var target;
             if(targets.length) {
@@ -41,7 +41,7 @@ module.exports = {
                     }
                 }
             }
-
+*/
             if(target = creep.pos.findClosestByRange(STRUCTURE_WALL)) {
                 //temp remove walls
                 if(creep.attack(target) == ERR_NOT_IN_RANGE) {
