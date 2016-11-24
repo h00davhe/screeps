@@ -36,7 +36,7 @@ module.exports.loop = function () {
     }
 
     var attack = false;
-    var attackTarget = new RoomPosition(14, 36, 'E68N26');
+    var attackTarget = new RoomPosition(31, 36, 'E67N26');
     
     //find number of creeps by role
     var harvester1 = _.filter(Game.creeps, (creep) => creep.memory.role == 'harvester1');
