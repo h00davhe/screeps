@@ -6,6 +6,7 @@ module.exports = {
         }
         else{
             //on new room entry, force new pathfinding
+            //first tick in new room creep.moveTo(pos, {reusePath: 0});
 
             //attack stuff
 /*
