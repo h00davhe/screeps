@@ -110,7 +110,7 @@ module.exports.loop = function () {
         else if(creep.memory.role == 'reserver') {
             roleReserver.run(creep);
         }
-        else if(creep.memory.role == ('remoteHarvester1' || 'remoteHarvester2')) {
+        else if(creep.memory.role == 'remoteHarvester1' || creep.memory.role == 'remoteHarvester2') {
             roleRemoteHarvester.run(creep);
         }
     }
