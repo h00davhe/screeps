@@ -4,7 +4,7 @@ module.exports = {
           //move to room
           //let target = new RoomPosition(25,25,creep.memory.destinationRoom);
           let target = new RoomPosition(25,25,'E68N26');
-          
+
           creep.moveTo(target);
       }
       else{

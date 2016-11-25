@@ -32,7 +32,7 @@ module.exports = {
             let result = creep.transfer(Game.getObjectById('58374c1ab2c90fb35402dee3'), RESOURCE_ENERGY)
 
             if(result == ERR_NOT_IN_RANGE) {
-                creep.moveTo(target);
+                creep.moveTo(Game.getObjectById('58374c1ab2c90fb35402dee3').pos);
             }
             /* not doing this, just wait for storage to get enough space
             else if(result == ERR_FULL){
