@@ -1,6 +1,8 @@
 module.exports = {
     run: function(creep) {
 
+        creep.say("executing");
+
         if (creep.carry.energy == 0) creep.memory.harvesting = true;
         if (creep.carry.energy == creep.carryCapacity) creep.memory.harvesting = false;
 
