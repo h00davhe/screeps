@@ -2,7 +2,8 @@ module.exports = {
   run: function(creep){
       if(creep.pos.roomName != creep.memory.destinationRoom) {
           //move to room
-          creep.moveTo(new RoomPosition(25,25,creep.memory.destinationRoom));
+          let target = new RoomPosition(25,25,creep.memory.destinationRoom)
+          creep.moveTo(target);
       }
       else{
           //reserve controller
