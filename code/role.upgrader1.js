@@ -1,14 +1,18 @@
 module.exports = {
+    //todo change all this to use states instead of a bunch of booleans to keep track of the current task
 
     run: function(creep) {
 
         //we ran out of energy upgrading, get more energy
-        if (creep.carry.energy == 0 &&  creep.memory.upgrading == true) {
+        if (creep.carry.energy == 0) {
             creep.memory.upgrading = false;
 
             //check container for energy
             if (Game.getObjectById('58374c1ab2c90fb35402dee3').store[RESOURCE_ENERGY] > 0) {
                 creep.memory.pickupFromContainer = true;
+            }
+            else{
+                creep.memory.pickupFromContainer = false;
             }
         }
         //check if inventory is full, if it is, upgrade controller
@@ -18,10 +22,12 @@ module.exports = {
                 creep.memory.upgrading = true;
             }
         }
+        /*
         //check if the container still has energy
         if (Game.getObjectById('58374c1ab2c90fb35402dee3').store[RESOURCE_ENERGY] == 0) {
             creep.memory.pickupFromContainer = false;
         }
+        */
 
         //There is energy in the container, pick it up
         if(creep.memory.pickupFromContainer && creep.memory.upgrading == false){
@@ -30,6 +36,10 @@ module.exports = {
 
             if(result == ERR_NOT_IN_RANGE) {
                 creep.moveTo(Game.getObjectById('58374c1ab2c90fb35402dee3').pos);
+            }
+            else if(result == OK){
+                creep.memory.upgrading = true;
+                creep.memory.pickupFromContainer = false;
             }
         }
         //Gather energy
