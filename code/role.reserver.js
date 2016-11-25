@@ -1,8 +1,8 @@
 module.exports = {
   run: function(creep){
-      if(creep.pos.roomName != creep.memory.destinationRoom.roomName) {
+      if(creep.pos.roomName != creep.memory.destinationRoom) {
           //move to room
-          creep.moveTo(creep.memory.destinationRoom);
+          creep.moveTo(new RoomPosition(25,25,creep.memory.destinationRoom));
       }
       else{
           //reserve controller
@@ -14,3 +14,8 @@ module.exports = {
       }
   }
 };
+
+/*
+ var error = creep.moveTo(new RoomPosition(25,25,creep.memory.destinationRoom.roomName));
+ console.log(error)
+ */
