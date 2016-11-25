@@ -29,7 +29,7 @@ module.exports = {
             let result = creep.withdraw(Game.getObjectById('58374c1ab2c90fb35402dee3'), RESOURCE_ENERGY)
 
             if(result == ERR_NOT_IN_RANGE) {
-                creep.moveTo(target);
+                creep.moveTo(Game.getObjectById('58374c1ab2c90fb35402dee3').pos);
             }
         }
         //Gather energy
