@@ -39,7 +39,7 @@ module.exports.loop = function () {
     //console.log('Harvesters: ' + harvesters.length);
 
     //auto-spawn
-    if (harvester1.length < 2) {
+    if (harvester1.length < 3) {
         var newName = Game.spawns['Spawn1'].createCreep([WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE], undefined, {role: 'harvester1'});
         if (!(newName < 0)) console.log('Spawning new harvester1: ' + newName);
     }

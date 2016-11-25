@@ -1,4 +1,5 @@
 //todo: spawn builders only when there are unfinished buildings - then despawn them
+//todo do something about creeps dying while carrying energy
 
 //make new repair creep, spawn on demand - then despawn, make list of stuff that needs repair - sort lowest hp - finish repairing before getting new target
 //update list every 50? ticks when no repairer is active, more often when active or when creep calls for new repair target
