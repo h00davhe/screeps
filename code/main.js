@@ -23,8 +23,10 @@ module.exports.loop = function () {
     //var reserveTarget = new RoomPosition(25, 25, 'E68N26');
     var reserveTarget = 'E68N26';
     const REMOTEHARVESTTARGET = 'E68N26'
-    
+    const ROOM1 = 'E67N26'
+
     //find number of creeps by role
+    //todo parse this once and increase all the counters in a manual filter function instead
     var harvester1 = _.filter(Game.creeps, (creep) => creep.memory.role == 'harvester1');
     var harvester2 = _.filter(Game.creeps, (creep) => creep.memory.role == 'harvester2');
     var upgrader1 = _.filter(Game.creeps, (creep) => creep.memory.role == 'upgrader1');
@@ -35,6 +37,7 @@ module.exports.loop = function () {
     var reserver = _.filter(Game.creeps, (creep) => creep.memory.role == 'reserver');
     var remoteHarvester1 = _.filter(Game.creeps, (creep) => creep.memory.role == 'remoteHarvester1');
     var remoteHarvester2 = _.filter(Game.creeps, (creep) => creep.memory.role == 'remoteHarvester2');
+    var remoteBuilder = _.filter(Game.creeps, (creep) => creep.memory.role == 'remoteBuilder');
 
     //console.log('Harvesters: ' + harvesters.length);
 
@@ -48,22 +51,26 @@ module.exports.loop = function () {
         if (!(newName < 0)) console.log('Spawning new harvester2: ' + newName);
     }
     if (harvester1.length < 1 && harvester2.length < 1 && emergencyHarvester.length < 3) {
-        var newName = Game.spawns['Spawn1'].createCreep([WORK, WORK, CARRY, MOVE], undefined, {role: 'emergencyHarvester'});
+        var newName = Game.spawns['Spawn1'].createCreep([WORK,WORK,CARRY,MOVE], undefined, {role: 'emergencyHarvester'});
         if (!(newName < 0)) console.log('Spawning new emergencyharvester: ' + newName);
     }
     //Only spawn other creeps if we already have harvesters
     if (harvester1.length > 1 && harvester2.length > 1) {
         if (upgrader1.length < 4) {
-            var newName = Game.spawns['Spawn1'].createCreep([WORK, WORK, WORK, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE], undefined, {role: 'upgrader1'});
+            var newName = Game.spawns['Spawn1'].createCreep([WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE,MOVE], undefined, {role: 'upgrader1'});
             if (!(newName < 0)) console.log('Spawning new upgrader1: ' + newName);
         }
         if (upgrader2.length < 2) {
-            var newName = Game.spawns['Spawn1'].createCreep([WORK, WORK, WORK, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE], undefined, {role: 'upgrader2'});
+            var newName = Game.spawns['Spawn1'].createCreep([WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE], undefined, {role: 'upgrader2'});
             if (!(newName < 0)) console.log('Spawning new upgrader2: ' + newName);
         }
         if (builder.length < 1) {
             var newName = Game.spawns['Spawn1'].createCreep([WORK, WORK, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE], undefined, {role: 'builder', repairMostDamagedFirst: false});
             if (!(newName < 0)) console.log('Spawning new builder: ' + newName);
+        }
+        if (remoteBuilder.length < 1) {
+            var newName = Game.spawns['Spawn1'].createCreep([WORK, WORK, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE], undefined, {role: 'remoteBuilder', repairMostDamagedFirst: false, destinationRoom: REMOTEHARVESTTARGET});
+            if (!(newName < 0)) console.log('Spawning new remoteBuilder: ' + newName);
         }
         if (attacker.length < 1 && attack) {
             var newName = Game.spawns['Spawn1'].createCreep([TOUGH, TOUGH, ATTACK, ATTACK, ATTACK, ATTACK, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, ATTACK, ATTACK, ATTACK, ATTACK, MOVE], undefined, {role: 'attacker'});
@@ -77,7 +84,7 @@ module.exports.loop = function () {
             var newName = Game.spawns['Spawn1'].createCreep([WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE], undefined, {role: 'remoteHarvester1', destinationRoom: REMOTEHARVESTTARGET, sourceNumber: 0});
             if (!(newName < 0)) console.log('Spawning new remoteHarvester1: ' + newName);
         }
-        if (remoteHarvester2.length < 1) {
+        if (remoteHarvester2.length < 2) {
             var newName = Game.spawns['Spawn1'].createCreep([WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE], undefined, {role: 'remoteHarvester2', destinationRoom: REMOTEHARVESTTARGET, sourceNumber: 1});
             if (!(newName < 0)) console.log('Spawning new remoteHarvester2: ' + newName);
         }
@@ -114,6 +121,8 @@ module.exports.loop = function () {
             roleRemoteHarvester.run(creep);
         }
     }
+
+
 
     //run towers
     //todo:make towers repair

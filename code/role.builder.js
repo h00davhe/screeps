@@ -3,6 +3,16 @@ module.exports = {
 
     run: function(creep) {
 
+        //go to destinationRoom
+        if(creep.memory.destination != undefined && creep.pos.roomName != creep.memory.destinationRoom) {
+            //move to room
+            let target = new RoomPosition(25,25,creep.memory.destinationRoom);
+            //let target = new RoomPosition(25,25,'E68N26');
+
+            creep.moveTo(target);
+            return;
+        }
+
     	//update state
 	    if(creep.memory.building && creep.carry.energy == 0) {
             creep.memory.building = false;
