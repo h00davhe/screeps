@@ -77,7 +77,7 @@ module.exports.loop = function () {
             if (!(newName < 0)) console.log('Spawning new attacker: ' + newName);
         }
         if (reserver.length < 1) {
-            var newName = Game.spawns['Spawn1'].createCreep([CLAIM, CLAIM, MOVE, MOVE], undefined, {role: 'reserver', destinationRoom: reserveTarget});
+            var newName = Game.spawns['Spawn1'].createCreep([CLAIM, CLAIM, MOVE], undefined, {role: 'reserver', destinationRoom: reserveTarget});
             if (!(newName < 0)) console.log('Spawning new reserver: ' + newName);
         }
         if (remoteHarvester1.length < 1) {
