@@ -81,7 +81,7 @@ module.exports.loop = function () {
             if (!(newName < 0)) console.log('Spawning new reserver: ' + newName);
         }
         if (remoteHarvester1.length < 1) {
-            var newName = Game.spawns['Spawn1'].createCreep([WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE], undefined, {role: 'remoteHarvester1', destinationRoom: REMOTEHARVESTTARGET, sourceNumber: 0});
+            var newName = Game.spawns['Spawn1'].createCreep([WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE], undefined, {role: 'remoteHarvester1', destinationRoom: REMOTEHARVESTTARGET, sourceNumber: 0});
             if (!(newName < 0)) console.log('Spawning new remoteHarvester1: ' + newName);
         }
         if (remoteHarvester2.length < 2) {
