@@ -19,7 +19,7 @@ module.exports.loop = function () {
     }
 
     var attack = true;
-    var attackTarget = new RoomPosition(9, 19, 'E68N27');
+    var attackTarget = new RoomPosition(9, 19, 'E69N27');
     //var reserveTarget = new RoomPosition(25, 25, 'E68N26');
     var reserveTarget = 'E68N26';
     const REMOTEHARVESTTARGET = 'E68N26'
@@ -73,7 +73,7 @@ module.exports.loop = function () {
             if (!(newName < 0)) console.log('Spawning new remoteBuilder: ' + newName);
         }
         if (attacker.length < 1 && attack) {
-            var newName = Game.spawns['Spawn1'].createCreep([TOUGH,TOUGH,MOVE,ATTACK,ATTACK,MOVE], undefined, {role: 'attacker'});
+            var newName = Game.spawns['Spawn1'].createCreep([TOUGH,TOUGH,MOVE,ATTACK,ATTACK,MOVE], undefined, {role: 'attacker', attackTarget: attackTarget});
             if (!(newName < 0)) console.log('Spawning new attacker: ' + newName);
         }
         if (reserver.length < 0) {
