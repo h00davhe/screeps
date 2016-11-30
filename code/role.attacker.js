@@ -1,6 +1,6 @@
 module.exports = {
     run: function(creep,attackTarget){
-        if(creep.pos.roomName != attackTarget.roomName) {
+        if(creep.pos.roomName != creep.memory.attackTarget.roomName) {
             //move to room
             creep.moveTo(attackTarget);
         }
