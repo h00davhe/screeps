@@ -68,7 +68,7 @@ module.exports.loop = function () {
             var newName = Game.spawns['Spawn1'].createCreep([WORK, WORK, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE], undefined, {role: 'builder', repairMostDamagedFirst: false});
             if (!(newName < 0)) console.log('Spawning new builder: ' + newName);
         }
-        if (remoteBuilder.length < 1) {
+        if (remoteBuilder.length < 0) {
             var newName = Game.spawns['Spawn1'].createCreep([WORK, WORK, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE], undefined, {role: 'remoteBuilder', repairMostDamagedFirst: false, destinationRoom: REMOTEHARVESTTARGET});
             if (!(newName < 0)) console.log('Spawning new remoteBuilder: ' + newName);
         }
@@ -76,15 +76,15 @@ module.exports.loop = function () {
             var newName = Game.spawns['Spawn1'].createCreep([TOUGH, TOUGH, ATTACK, ATTACK, ATTACK, ATTACK, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, ATTACK, ATTACK, ATTACK, ATTACK, MOVE], undefined, {role: 'attacker'});
             if (!(newName < 0)) console.log('Spawning new attacker: ' + newName);
         }
-        if (reserver.length < 1) {
+        if (reserver.length < 0) {
             var newName = Game.spawns['Spawn1'].createCreep([CLAIM, CLAIM, MOVE], undefined, {role: 'reserver', destinationRoom: reserveTarget});
             if (!(newName < 0)) console.log('Spawning new reserver: ' + newName);
         }
-        if (remoteHarvester1.length < 1) {
+        if (remoteHarvester1.length < 0) {
             var newName = Game.spawns['Spawn1'].createCreep([WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE], undefined, {role: 'remoteHarvester1', destinationRoom: REMOTEHARVESTTARGET, sourceNumber: 0});
             if (!(newName < 0)) console.log('Spawning new remoteHarvester1: ' + newName);
         }
-        if (remoteHarvester2.length < 2) {
+        if (remoteHarvester2.length < 0) {
             var newName = Game.spawns['Spawn1'].createCreep([WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE], undefined, {role: 'remoteHarvester2', destinationRoom: REMOTEHARVESTTARGET, sourceNumber: 1});
             if (!(newName < 0)) console.log('Spawning new remoteHarvester2: ' + newName);
         }
