@@ -73,7 +73,7 @@ module.exports.loop = function () {
             if (!(newName < 0)) console.log('Spawning new remoteBuilder: ' + newName);
         }
         if (attacker.length < 1 && attack) {
-            var newName = Game.spawns['Spawn1'].createCreep([TOUGH,TOUGH,MOVE,ATTACK,ATTACK,MOVE], undefined, {role: 'attacker', attackTarget: attackTarget});
+            var newName = Game.spawns['Spawn1'].createCreep([ATTACK,MOVE], undefined, {role: 'attacker', attackTarget: attackTarget});
             if (!(newName < 0)) console.log('Spawning new attacker: ' + newName);
         }
         if (reserver.length < 0) {
