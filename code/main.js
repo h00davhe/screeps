@@ -90,6 +90,39 @@ module.exports.loop = function () {
         }
     }
 
+
+    //run towers
+    //todo:make towers repair
+
+    var tower = Game.getObjectById('5831e51e80d1b074327a9522');
+    //console.log(tower);
+
+    if(tower) {
+        var closestHostile = tower.pos.findClosestByRange(FIND_HOSTILE_CREEPS);
+        if(closestHostile){
+            tower.attack(closestHostile);
+        }
+    }
+
+    tower = Game.getObjectById('5835b3171f2aeccc2db73850');
+
+    if(tower) {
+        var closestHostile = tower.pos.findClosestByRange(FIND_HOSTILE_CREEPS);
+        if(closestHostile){
+            tower.attack(closestHostile);
+        }
+    }
+
+    tower = Game.getObjectById('584c789ce3c7b2a06c40f329');
+
+    if(tower) {
+        var closestHostile = tower.pos.findClosestByRange(FIND_HOSTILE_CREEPS);
+        if(closestHostile){
+            tower.attack(closestHostile);
+        }
+    }
+
+    
     //run creep roles
     for(var i in Game.creeps) {
         var creep = Game.creeps[i];
@@ -124,27 +157,8 @@ module.exports.loop = function () {
 
 
 
-    //run towers
-    //todo:make towers repair
-    
-    var tower = Game.getObjectById('5831e51e80d1b074327a9522');
-    //console.log(tower);
 
-    if(tower) {
-        var closestHostile = tower.pos.findClosestByRange(FIND_HOSTILE_CREEPS);
-        if(closestHostile){
-            tower.attack(closestHostile);
-        }
-    }
 
-    tower = Game.getObjectById('5835b3171f2aeccc2db73850');
-
-    if(tower) {
-        var closestHostile = tower.pos.findClosestByRange(FIND_HOSTILE_CREEPS);
-        if(closestHostile){
-            tower.attack(closestHostile);
-        }
-    }
 
 /*  Needs some more work
     var hostiles = Game.spawns['Spawn1'].room.find(FIND_HOSTILE_CREEPS);
