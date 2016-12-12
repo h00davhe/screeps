@@ -18,7 +18,7 @@ module.exports.loop = function () {
         }
     }
 
-    var attack = true;
+    var attack = false;
     var attackTarget = new RoomPosition(9, 19, 'E69N27');
     //var reserveTarget = new RoomPosition(25, 25, 'E68N26');
     var reserveTarget = 'E68N26';
@@ -122,7 +122,7 @@ module.exports.loop = function () {
         }
     }
 
-    
+
     //run creep roles
     for(var i in Game.creeps) {
         var creep = Game.creeps[i];
