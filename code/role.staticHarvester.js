@@ -10,7 +10,7 @@ module.exports = {
             }
             else{
                 //in correct room, move to position
-                let destination = Game.getObjectById(creep.memory.containerId);
+                var destination = Game.getObjectById(creep.memory.containerId);
                 if(creep.pos != destination.pos){
                     creep.moveTo(destination.pos);
                 }
@@ -19,8 +19,8 @@ module.exports = {
                 }
             }
         }
-        if(creep.state == 'harvesting'){
-            let container = Game.getObjectById(creep.memory.containerId);
+        if(creep.memory.state == 'harvesting'){
+            var container = Game.getObjectById(creep.memory.containerId);
 
             if(container.store[RESOURCE_ENERGY] != container.storeCapacity){
                 creep.harvest(creep.pos.findClosestByRange(FIND_SOURCES))
