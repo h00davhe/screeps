@@ -15,14 +15,21 @@ var roleHarvester1 = {
                     }
         });
 */
-        //new try
+        //towers first
         var target = creep.pos.findClosestByRange(FIND_STRUCTURES, {
             filter: (structure) => {
-                return (structure.structureType == STRUCTURE_TOWER  ||
-                        structure.structureType == STRUCTURE_SPAWN  ||
-                        structure.structureType == STRUCTURE_EXTENSION) && structure.energy < structure.energyCapacity;
+            return (structure.structureType == STRUCTURE_TOWER) && structure.energy < structure.energyCapacity;
             }
         });
+
+        if(!target) {
+            var target = creep.pos.findClosestByRange(FIND_STRUCTURES, {
+                filter: (structure) => {
+                return (structure.structureType == STRUCTURE_SPAWN ||
+                        structure.structureType == STRUCTURE_EXTENSION) && structure.energy < structure.energyCapacity;
+               }
+            });
+        }
 
         //harvest energy
 	    if(creep.carry.energy < creep.carryCapacity && creep.memory.harvesting == true) {
