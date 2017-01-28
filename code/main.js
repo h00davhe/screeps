@@ -18,8 +18,8 @@ module.exports.loop = function () {
         }
     }
 
-    var attack = false;
-    var attackTarget = new RoomPosition(9, 19, 'E69N27');
+    var attack = true;
+    var attackTarget = new RoomPosition(9, 19, 'E67N26');
     //var reserveTarget = new RoomPosition(25, 25, 'E68N26');
     var reserveTarget = 'E68N26';
     const REMOTEHARVESTTARGET = 'E68N26'
@@ -64,7 +64,7 @@ module.exports.loop = function () {
             var newName = Game.spawns['Spawn1'].createCreep([WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE], undefined, {role: 'upgrader2'});
             if (!(newName < 0)) console.log('Spawning new upgrader2: ' + newName);
         }
-        if (builder.length < 1) {
+        if (builder.length < 2) {
             var newName = Game.spawns['Spawn1'].createCreep([WORK, WORK, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE], undefined, {role: 'builder', repairMostDamagedFirst: false});
             if (!(newName < 0)) console.log('Spawning new builder: ' + newName);
         }
