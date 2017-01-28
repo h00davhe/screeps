@@ -7,8 +7,8 @@ module.exports = {
         if (creep.carry.energy == 0) {
             creep.memory.upgrading = false;
 
-            //check container for energy
-            if (Game.getObjectById('58374c1ab2c90fb35402dee3').store[RESOURCE_ENERGY] > 0) {
+            //check container for energy - change this container ID
+            if (Game.getObjectById('5837b16c23eca9532f5b25f5').store[RESOURCE_ENERGY] > 0) {
                 creep.memory.pickupFromContainer = true;
             }
             else{

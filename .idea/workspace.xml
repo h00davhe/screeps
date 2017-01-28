@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eb6c3411-f462-449a-953b-27cda9e8d498" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/main.js" afterPath="$PROJECT_DIR$/code/main.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/role.attacker.js" afterPath="$PROJECT_DIR$/code/role.attacker.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/role.upgrader1.js" afterPath="$PROJECT_DIR$/code/role.upgrader1.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="screeps.iws" />
@@ -27,10 +27,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="main.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="main.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/code/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3985932" vertical-offset="0" max-vertical-offset="3179">
+            <state vertical-scroll-proportion="0.0" vertical-offset="816" max-vertical-offset="3179">
               <caret line="20" column="21" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
               <folding />
             </state>
@@ -60,7 +60,7 @@
       <file leaf-file-name="role.attacker.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/code/role.attacker.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="986">
+            <state vertical-scroll-proportion="0.0" vertical-offset="103" max-vertical-offset="969">
               <caret line="37" column="37" selection-start-line="37" selection-start-column="37" selection-end-line="37" selection-end-column="37" />
               <folding />
             </state>
@@ -77,11 +77,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="role.upgrader1.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="role.upgrader1.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/code/role.upgrader1.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="34" max-vertical-offset="1139">
-              <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.17667437" vertical-offset="0" max-vertical-offset="1139">
+              <caret line="9" column="67" selection-start-line="9" selection-start-column="67" selection-end-line="9" selection-end-column="67" />
               <folding />
             </state>
           </provider>
@@ -103,7 +103,6 @@
         <option value="$PROJECT_DIR$/code/role.claimer.js" />
         <option value="$PROJECT_DIR$/code/role.harvester1.js" />
         <option value="$PROJECT_DIR$/code/role.reserver.js" />
-        <option value="$PROJECT_DIR$/code/role.upgrader1.js" />
         <option value="$PROJECT_DIR$/code/role.remoteHarvester.js" />
         <option value="$PROJECT_DIR$/code/txt.js" />
         <option value="$PROJECT_DIR$/code/role.builder.js" />
@@ -111,8 +110,9 @@
         <option value="$PROJECT_DIR$/code/role.staticHarvester.js" />
         <option value="$PROJECT_DIR$/code/role.staticUpgrader.js" />
         <option value="$PROJECT_DIR$/code/role.transport.js" />
-        <option value="$PROJECT_DIR$/code/role.attacker.js" />
         <option value="$PROJECT_DIR$/code/main.js" />
+        <option value="$PROJECT_DIR$/code/role.attacker.js" />
+        <option value="$PROJECT_DIR$/code/role.upgrader1.js" />
       </list>
     </option>
   </component>
@@ -303,7 +303,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="109" y="17" width="1796" height="1000" extended-state="1" />
+    <frame x="109" y="17" width="1796" height="1000" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -638,14 +638,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/code/role.upgrader1.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1139">
-          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/code/role.transport.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="629">
@@ -654,18 +646,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/code/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="816" max-vertical-offset="3179">
+          <caret line="20" column="21" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/code/role.attacker.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="986">
+        <state vertical-scroll-proportion="0.0" vertical-offset="103" max-vertical-offset="969">
           <caret line="37" column="37" selection-start-line="37" selection-start-column="37" selection-end-line="37" selection-end-column="37" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/code/main.js">
+    <entry file="file://$PROJECT_DIR$/code/role.upgrader1.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3985932" vertical-offset="0" max-vertical-offset="3179">
-          <caret line="20" column="21" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
+        <state vertical-scroll-proportion="0.17667437" vertical-offset="0" max-vertical-offset="1139">
+          <caret line="9" column="67" selection-start-line="9" selection-start-column="67" selection-end-line="9" selection-end-column="67" />
           <folding />
         </state>
       </provider>
