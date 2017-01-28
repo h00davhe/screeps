@@ -100,9 +100,19 @@ module.exports.loop = function () {
     if(tower) {
         var closestHostile = tower.pos.findClosestByRange(FIND_HOSTILE_CREEPS);
         //console.log(tower.pos.getRangeTo(closestHostile));
-        console.log(tower.energy);
-        if(closestHostile){
-            tower.attack(closestHostile);
+
+        if(closestHostile) {
+            if (tower.energy > 1000) {
+                tower.attack(closestHostile);
+            }
+            else if(tower.energy > 500){
+                if(tower.pos.getRangeTo(closestHostile) < 15){
+                    tower.attack(closestHostile);
+                }
+            }
+            else if(tower.pos.getRangeTo(closestHostile) < 10){
+                tower.attack(closestHostile);
+            }
         }
     }
 
@@ -110,8 +120,18 @@ module.exports.loop = function () {
 
     if(tower) {
         closestHostile = tower.pos.findClosestByRange(FIND_HOSTILE_CREEPS);
-        if(closestHostile){
-            tower.attack(closestHostile);
+        if(closestHostile) {
+            if (tower.energy > 1000) {
+                tower.attack(closestHostile);
+            }
+            else if(tower.energy > 500){
+                if(tower.pos.getRangeTo(closestHostile) < 15){
+                    tower.attack(closestHostile);
+                }
+            }
+            else if(tower.pos.getRangeTo(closestHostile) < 10){
+                tower.attack(closestHostile);
+            }
         }
     }
 
@@ -119,8 +139,18 @@ module.exports.loop = function () {
 
     if(tower) {
         closestHostile = tower.pos.findClosestByRange(FIND_HOSTILE_CREEPS);
-        if(closestHostile){
-            tower.attack(closestHostile);
+        if(closestHostile) {
+            if (tower.energy > 1000) {
+                tower.attack(closestHostile);
+            }
+            else if(tower.energy > 500){
+                if(tower.pos.getRangeTo(closestHostile) < 15){
+                    tower.attack(closestHostile);
+                }
+            }
+            else if(tower.pos.getRangeTo(closestHostile) < 10){
+                tower.attack(closestHostile);
+            }
         }
     }
 
