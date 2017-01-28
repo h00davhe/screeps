@@ -32,9 +32,9 @@ module.exports = {
             }
             else if(target = creep.pos.findClosestByRange(FIND_HOSTILE_CREEPS)) {
                 //kill creeps
-               // if(creep.attack(target) == ERR_NOT_IN_RANGE) {
-                //    creep.moveTo(target);
-                //}
+//                if(creep.attack(target) == ERR_NOT_IN_RANGE) {
+//                    creep.moveTo(target);
+//                }
                 creep.moveTo(target);
                 creep.attack(target);
 
