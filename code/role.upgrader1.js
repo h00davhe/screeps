@@ -1,6 +1,5 @@
 module.exports = {
     //todo change all this to use states instead of a bunch of booleans to keep track of the current task
-//todo HALP I AM BROKEN!
 
     run: function(creep) {
 
@@ -33,10 +32,10 @@ module.exports = {
         //There is energy in the container, pick it up
         if(creep.memory.pickupFromContainer && creep.memory.upgrading == false){
 
-            let result = creep.withdraw(Game.getObjectById('58374c1ab2c90fb35402dee3'), RESOURCE_ENERGY)
+            let result = creep.withdraw(Game.getObjectById('5837b16c23eca9532f5b25f5'), RESOURCE_ENERGY)
 
             if(result == ERR_NOT_IN_RANGE) {
-                creep.moveTo(Game.getObjectById('58374c1ab2c90fb35402dee3').pos);
+                creep.moveTo(Game.getObjectById('5837b16c23eca9532f5b25f5').pos);
             }
             else if(result == OK){
                 creep.memory.upgrading = true;

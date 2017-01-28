@@ -42,7 +42,7 @@ module.exports.loop = function () {
     //console.log('Harvesters: ' + harvesters.length);
 
     //auto-spawn
-    if (harvester1.length < 4) {
+    if (harvester1.length < 3) {
         var newName = Game.spawns['Spawn1'].createCreep([WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE], undefined, {role: 'harvester1'});
         if (!(newName < 0)) console.log('Spawning new harvester1: ' + newName);
     }
@@ -56,7 +56,7 @@ module.exports.loop = function () {
     }
     //Only spawn other creeps if we already have harvesters
     if (harvester1.length > 1 && harvester2.length > 1) {
-        if (upgrader1.length < 0) {
+        if (upgrader1.length < 2) {
             var newName = Game.spawns['Spawn1'].createCreep([WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE,MOVE], undefined, {role: 'upgrader1'});
             if (!(newName < 0)) console.log('Spawning new upgrader1: ' + newName);
         }
