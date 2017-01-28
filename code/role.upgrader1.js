@@ -1,5 +1,6 @@
 module.exports = {
     //todo change all this to use states instead of a bunch of booleans to keep track of the current task
+//todo HALP I AM BROKEN!
 
     run: function(creep) {
 
