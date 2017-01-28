@@ -56,7 +56,7 @@ module.exports.loop = function () {
     }
     //Only spawn other creeps if we already have harvesters
     if (harvester1.length > 1 && harvester2.length > 1) {
-        if (upgrader1.length < 2) {
+        if (upgrader1.length < 3) {
             var newName = Game.spawns['Spawn1'].createCreep([WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE,MOVE], undefined, {role: 'upgrader1'});
             if (!(newName < 0)) console.log('Spawning new upgrader1: ' + newName);
         }
@@ -153,6 +153,67 @@ module.exports.loop = function () {
             }
         }
     }
+
+    tower = Game.getObjectById('588cffd97c1817bb3da9f58b');
+
+    if(tower) {
+        closestHostile = tower.pos.findClosestByRange(FIND_HOSTILE_CREEPS);
+        if(closestHostile) {
+            if (tower.energy > 1000) {
+                tower.attack(closestHostile);
+            }
+            else if(tower.energy > 500){
+                if(tower.pos.getRangeTo(closestHostile) < 15){
+                    tower.attack(closestHostile);
+                }
+            }
+            else if(tower.pos.getRangeTo(closestHostile) < 10){
+                tower.attack(closestHostile);
+            }
+        }
+    }
+
+       
+    tower = Game.getObjectById('588d0b27070f904530d2ebf0');
+
+    if(tower) {
+        closestHostile = tower.pos.findClosestByRange(FIND_HOSTILE_CREEPS);
+        if(closestHostile) {
+            if (tower.energy > 1000) {
+                tower.attack(closestHostile);
+            }
+            else if(tower.energy > 500){
+                if(tower.pos.getRangeTo(closestHostile) < 15){
+                    tower.attack(closestHostile);
+                }
+            }
+            else if(tower.pos.getRangeTo(closestHostile) < 10){
+                tower.attack(closestHostile);
+            }
+        }
+    }
+
+
+    tower = Game.getObjectById('588d170db85f17d35ddf1f17');
+
+    if(tower) {
+        closestHostile = tower.pos.findClosestByRange(FIND_HOSTILE_CREEPS);
+        if(closestHostile) {
+            if (tower.energy > 1000) {
+                tower.attack(closestHostile);
+            }
+            else if(tower.energy > 500){
+                if(tower.pos.getRangeTo(closestHostile) < 15){
+                    tower.attack(closestHostile);
+                }
+            }
+            else if(tower.pos.getRangeTo(closestHostile) < 10){
+                tower.attack(closestHostile);
+            }
+        }
+    }
+
+
 
 
     //run creep roles
