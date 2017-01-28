@@ -60,11 +60,11 @@ module.exports.loop = function () {
             var newName = Game.spawns['Spawn1'].createCreep([WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE,MOVE], undefined, {role: 'upgrader1'});
             if (!(newName < 0)) console.log('Spawning new upgrader1: ' + newName);
         }
-        if (upgrader2.length < 1) {
+        if (upgrader2.length < 2) {
             var newName = Game.spawns['Spawn1'].createCreep([WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE], undefined, {role: 'upgrader2'});
             if (!(newName < 0)) console.log('Spawning new upgrader2: ' + newName);
         }
-        if (builder.length < 3) {
+        if (builder.length < 1) {
             var newName = Game.spawns['Spawn1'].createCreep([WORK, WORK, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE], undefined, {role: 'builder', repairMostDamagedFirst: false});
             if (!(newName < 0)) console.log('Spawning new builder: ' + newName);
         }
@@ -173,7 +173,7 @@ module.exports.loop = function () {
         }
     }
 
-       
+
     tower = Game.getObjectById('588d0b27070f904530d2ebf0');
 
     if(tower) {
