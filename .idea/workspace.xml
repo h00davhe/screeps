@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="eb6c3411-f462-449a-953b-27cda9e8d498" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/main.js" afterPath="$PROJECT_DIR$/code/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="screeps.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,8 +28,8 @@
       <file leaf-file-name="main.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/code/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.41852286" vertical-offset="1938" max-vertical-offset="3230">
-              <caret line="135" column="35" selection-start-line="135" selection-start-column="35" selection-end-line="135" selection-end-column="35" />
+            <state vertical-scroll-proportion="0.58147717" vertical-offset="1459" max-vertical-offset="3230">
+              <caret line="115" column="56" selection-start-line="115" selection-start-column="56" selection-end-line="115" selection-end-column="56" />
               <folding />
             </state>
           </provider>
@@ -684,8 +683,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/code/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.41852286" vertical-offset="1938" max-vertical-offset="3230">
-          <caret line="135" column="35" selection-start-line="135" selection-start-column="35" selection-end-line="135" selection-end-column="35" />
+        <state vertical-scroll-proportion="0.58147717" vertical-offset="1459" max-vertical-offset="3230">
+          <caret line="115" column="56" selection-start-line="115" selection-start-column="56" selection-end-line="115" selection-end-column="56" />
           <folding />
         </state>
       </provider>

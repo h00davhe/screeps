@@ -94,7 +94,7 @@ module.exports.loop = function () {
     //run towers
     //todo:make towers repair
 
-    var tower = Game.getObjectById('5831e51e80d1b074327a9522');
+    var tower = Game.getObjectById('588cc626cb2da15f240e16c4');
     //console.log(tower);
 
     if(tower) {
@@ -104,7 +104,7 @@ module.exports.loop = function () {
         }
     }
 
-    tower = Game.getObjectById('5835b3171f2aeccc2db73850');
+    tower = Game.getObjectById('588cd4f253aca54f754501db');
 
     if(tower) {
         var closestHostile = tower.pos.findClosestByRange(FIND_HOSTILE_CREEPS);
@@ -113,7 +113,7 @@ module.exports.loop = function () {
         }
     }
 
-    tower = Game.getObjectById('584c789ce3c7b2a06c40f329');
+    tower = Game.getObjectById('588cdb4497fe3c8a235c00a1');
 
     if(tower) {
         var closestHostile = tower.pos.findClosestByRange(FIND_HOSTILE_CREEPS);
