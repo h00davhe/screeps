@@ -99,6 +99,7 @@ module.exports.loop = function () {
 
     if(tower) {
         var closestHostile = tower.pos.findClosestByRange(FIND_HOSTILE_CREEPS);
+        console.log(tower.pos.getRangeTo(closestHostile));
         if(closestHostile){
             tower.attack(closestHostile);
         }
@@ -107,7 +108,7 @@ module.exports.loop = function () {
     tower = Game.getObjectById('588cd4f253aca54f754501db');
 
     if(tower) {
-        var closestHostile = tower.pos.findClosestByRange(FIND_HOSTILE_CREEPS);
+        closestHostile = tower.pos.findClosestByRange(FIND_HOSTILE_CREEPS);
         if(closestHostile){
             tower.attack(closestHostile);
         }
@@ -116,7 +117,7 @@ module.exports.loop = function () {
     tower = Game.getObjectById('588cdb4497fe3c8a235c00a1');
 
     if(tower) {
-        var closestHostile = tower.pos.findClosestByRange(FIND_HOSTILE_CREEPS);
+        closestHostile = tower.pos.findClosestByRange(FIND_HOSTILE_CREEPS);
         if(closestHostile){
             tower.attack(closestHostile);
         }
@@ -129,11 +130,8 @@ module.exports.loop = function () {
         if(creep.memory.role == 'harvester1') {
             roleHarvester1.run(creep);
         }
-//        else if(creep.memory.role == 'harvester2') {
-//            roleHarvester2.run(creep);
-//        }
         else if(creep.memory.role == 'harvester2') {
-            roleBuilder.run(creep);
+            roleHarvester2.run(creep);
         }
         else if(creep.memory.role == 'emergencyHarvester') {
             roleHarvester1.run(creep);
